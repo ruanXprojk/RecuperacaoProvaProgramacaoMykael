@@ -1,0 +1,24 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
+public class Saida {
+    public static void main(String[] args) throws IOException{
+        
+        DataInputStream dado;
+        dado = new DataInputStream(System.in);
+        String s = "";
+        int num1 = 0;
+        int num2 = 0;
+        int saida = 0;
+        
+        JOptionPane.showInputDialog("Informe o 1ª número: ");
+        s = dado.readLine();
+        num1 = Integer.parseInt(s);
+        
+        JOptionPane.showInputDialog("Informe o 2ª número: ");
+        s = dado.readLine();
+        num2 = Integer.parseInt(s);
+        
+    }
+}
