@@ -1,0 +1,56 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class Cafeteria {
+   public static void main(String[] args) throws IOException{
+       DataInputStream dado;
+       dado = new DataInputStream(System.in);
+       String s = "";
+       
+       int quantVendaExpress = 0;
+       int quantVendaCapuccino = 0;
+       int quantVendasCafeleite = 0;
+       
+       Double valorExpress = 0.75;
+       Double valorCapuccino = 1.0;
+       Double valorCafeleite = 1.25;
+       
+       String[] sabores = new String[]{"1 - café expresso; 2 - café capuccino; 3 - leite com café;"};
+       int i = 0;
+       for(i = 0; i<sabores.length; i++){
+           System.out.println("Sabor: " + sabores[i]);
+       }
+       
+       System.out.println("Informe a quantidade de vendas do café expresso: ");
+       s = dado.readLine();
+       quantVendaExpress = Integer.parseInt(s);
+       
+       System.out.println("Informe a quantidade de vendas do café capuccino: ");
+       s = dado.readLine();
+       quantVendaCapuccino = Integer.parseInt(s);
+       
+       System.out.println("Informe a quantidade de vendas do café c/ leite: ");
+       s = dado.readLine();
+       quantVendasCafeleite = Integer.parseInt(s);
+       
+       System.out.print("\n");
+       
+       System.out.println("|Descrição Vendas|");
+       System.out.println("|quantidade vendidas de expresso: " + quantVendaExpress);
+       System.out.println("|quantidade vendidas de capuccino: " + quantVendaCapuccino);
+       System.out.println("|quantidade vendidas de café c/ leite: " + quantVendasCafeleite);
+       
+       System.out.print("\n");
+       
+       Double valorTotalExpress = quantVendaExpress * valorExpress;
+       Double valorTotalCapuccino = quantVendaCapuccino * valorCapuccino;
+       Double valorTotalCafeleite = quantVendasCafeleite * valorCafeleite;
+       
+       
+       System.out.println("Valor total das vendas");
+       System.out.println("|valor total expresso: " + valorTotalExpress);
+       System.out.println("|quantidade vendidas de capuccino: " + valorTotalCapuccino);
+       System.out.println("|quantidade vendidas de café c/ leite: " + valorTotalCafeleite);
+       
+   } 
+}
