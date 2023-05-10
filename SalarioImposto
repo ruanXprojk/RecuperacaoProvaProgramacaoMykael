@@ -1,0 +1,33 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class Salario {
+    public static void main(String[] args) throws IOException{
+        DataInputStream dado;
+        dado = new DataInputStream(System.in);
+        String s = "";
+        float valorHora = 0;
+        float horasTrampoMes = 0;
+        
+        System.out.println("Informe o valor por hora trabalhada: ");
+        s = dado.readLine();
+        valorHora = Float.parseFloat(s);
+        
+        System.out.println("Informe as horas trabalhadas ao mês: ");
+        s = dado.readLine();
+        horasTrampoMes = Float.parseFloat(s);
+        
+        
+        
+        float salarioBruto = valorHora * horasTrampoMes;
+        float impostoRenda = 11 / 100;
+        float inss = 8 / 100;
+        float sindicato = 5 / 100;
+        float disconto = salarioBruto - impostoRenda - inss - sindicato;
+        float salarioLiquido = disconto;
+        
+        System.out.println("Salário bruto: " + salarioBruto + " reais");
+        System.out.println("Será discontado parte do seu salário para efetuamento de impostos");
+        System.out.println("Salário liquido: " + salarioLiquido + " reais");
+    }
+}
