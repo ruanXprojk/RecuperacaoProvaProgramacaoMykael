@@ -1,0 +1,44 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class Lutador {
+    public static void main(String[] args) throws IOException{
+        DataInputStream dado;
+        dado = new DataInputStream(System.in);
+        
+        String s = "";
+        String nome = "";
+        float peso = 0;
+        
+        System.out.println("Informe o nome do lutador: ");
+        nome = dado.readLine();
+        
+        System.out.println("Informe o peso do lutador: ");
+        s = dado.readLine();
+        peso = Float.parseFloat(s);
+        
+        boolean pena = peso < 65;
+        boolean leve = peso >= 65 && peso < 72;
+        boolean ligeiro = peso >= 72 && peso < 79;
+        boolean meioMedio = peso >= 79 && peso < 86;
+        boolean medio = peso >= 86 && peso < 93;
+        boolean meioPesado = peso >= 93 && peso < 100;
+        boolean pesado = peso >= 100;
+        
+        if(pena){
+         System.out.println("O jogador " + nome + " se encontra na categoria pena");
+        }else if(leve){
+            System.out.println("O jogador " + nome + " se encontra na categoria leve");
+        }else if(ligeiro){
+            System.out.println("O jogador " + nome + " se encontra na categoria ligeiro");
+        }else if(meioMedio){
+            System.out.println("O jogador " + nome + " se encontra na categoria meio médio");
+        }else if(medio){
+            System.out.println("O jogador " + nome + " se encontra na categoria médio");
+        }else if(meioPesado){
+            System.out.println("O jogador " + nome + " se encontra na categoria meio pesado");
+        }else if(pesado){
+            System.out.println("O jogador " + nome + " se encontra na categoria pesado");
+        }
+    }
+}
