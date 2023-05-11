@@ -1,0 +1,21 @@
+import java.io.DataInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class NumeroInteiro {
+    public static void main(String[] args) throws IOException{
+        DataInputStream dado;
+        dado = new DataInputStream(System.in);
+        String s = "";
+        String n = null;
+        FileWriter arq = new FileWriter("C:\\Users\\aluno\\Desktop\\numeroInteiro" +n+ ".txt"); 
+        
+        PrintWriter gravarArq = new PrintWriter(arq);
+        gravarArq.printf("Informe um número: ");
+        s = dado.readLine();
+        int num = Integer.parseInt(s);
+        gravarArq.printf("-_-_-Data_-_-_");
+        
+    }
+}
