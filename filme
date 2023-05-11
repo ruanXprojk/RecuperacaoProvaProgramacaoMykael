@@ -1,0 +1,38 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+
+public class Filme {
+    public static void main(String[] args) throws IOException{
+        DataInputStream dado;
+        dado = new DataInputStream(System.in);
+        
+        System.out.println("Informe o nome do jogador: ");
+        String nome = dado.readLine();
+        
+        System.out.println("Informe o filme: ");
+        String filme = dado.readLine();
+        
+        System.out.println("Informe a 1ª pista: ");
+        String pista1 = dado.readLine();
+        
+        System.out.println("Informe a 2ª pista: ");
+        String pista2 = dado.readLine();
+        
+        System.out.println("--------------- -------------------");
+        
+        System.out.println("Informe o nome do jogador: ");
+        String player2 = dado.readLine();
+        
+        System.out.println("1ª pista: " + pista1);
+        System.out.println("2ª pista: " + pista2);
+        
+        System.out.println("Informe o filme que o jogador " + nome + " selecionou: ");
+        String movies = dado.readLine();
+        
+        if(movies == filme){
+            System.out.println("Você acertou !!!!");
+        }else if(movies != filme){
+            System.err.println("Você errou !!!");
+        }
+    }
+}
